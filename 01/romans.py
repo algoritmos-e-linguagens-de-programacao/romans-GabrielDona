@@ -1,6 +1,3 @@
-#Input criado para perguntar e receber número digitado pelo utilizador
-Inputado = int(input("Digite um número decimal inteiro para conversão para número romano:"))
-
 #definição que cria a lista de números com atribuição de simbolos a cada um deles
 def printRoman(number):
 
@@ -34,7 +31,7 @@ def printRoman(number):
         i -= 1
   
 if __name__ == "__main__":
-    number = Inputado
+    number = 3954
     print("O número romano para o numeral inserido é:", end = " ")
     printRoman(number)
     
