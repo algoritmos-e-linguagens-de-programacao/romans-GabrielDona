@@ -1,3 +1,6 @@
+number = 1994
+s = "MCMXCIV"
+
 #Números que terão sua conexão com o simbolos
 num = [1, 4, 5, 9, 10, 40, 50, 90,
     100, 400, 500, 900, 1000]
