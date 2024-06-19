@@ -1,17 +1,16 @@
+#Números que terão sua conexão com o simbolos
+num = [1, 4, 5, 9, 10, 40, 50, 90,
+    100, 400, 500, 900, 1000]
+
+#Simbolos que serão convertidos no lugar dos números
+sym = ["I", "IV", "V", "IX", "X", "XL",
+    "L", "XC", "C", "CD", "D", "CM", "M"]
+
+#i = ordem em que se encontra os números, sendo o úmero com local 12 o mais alto e local 0 o mais baixo
+i = 12
+
 #definição que cria a lista de números com atribuição de simbolos a cada um deles
-def printRoman(number):
-
-    #Números que terão sua conexão com o simbolos
-    num = [1, 4, 5, 9, 10, 40, 50, 90,
-        100, 400, 500, 900, 1000]
-
-    #Simbolos que serão convertidos no lugar dos números
-    sym = ["I", "IV", "V", "IX", "X", "XL",
-        "L", "XC", "C", "CD", "D", "CM", "M"]
-
-    #i = ordem em que se encontra os números, sendo o úmero com local 12 o mais alto e local 0 o mais baixo
-    i = 12
-
+def int_to_roman(number):
     #cria um enquanto que faz a repetição da ação sempre que etiver nesse processo
     while number:
 
@@ -29,9 +28,22 @@ def printRoman(number):
         #Diminui em 1 na ordem de sequencia de divisão dos números
         #Resumindo, passa para o proximo número
         i -= 1
-  
+        
+def roman_to_int(roman):
+    i = 0
+    total = 0
+    n = len(roman)
+
+    while i < n:
+        # Verifica se o par de símbolos forma um numeral especial (por exemplo, "IV", "IX", etc.)
+        if i + 1 < n and roman[i:i+2] in sym_to_value:
+            total += sym_to_value[roman[i:i+2]]
+            i += 2
+        else:
+            total += sym_to_value[roman[i]]
+            i += 1
+      
 if __name__ == "__main__":
-    number = 3954
     print("O número romano para o numeral inserido é:", end = " ")
     printRoman(number)
     
