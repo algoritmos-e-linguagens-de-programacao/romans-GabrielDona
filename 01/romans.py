@@ -29,21 +29,23 @@ def int_to_roman(number):
         #Resumindo, passa para o proximo número
         i -= 1
         
-def roman_to_int(roman):
+def roman_to_int(s):
     i = 0
     total = 0
-    n = len(roman)
+    n = len(s)
 
     while i < n:
         # Verifica se o par de símbolos forma um numeral especial (por exemplo, "IV", "IX", etc.)
-        if i + 1 < n and roman[i:i+2] in sym_to_value:
-            total += sym_to_value[roman[i:i+2]]
+        if i + 1 < n and s[i:i+2] in sym:
+            total += sym[s[i:i+2]]
             i += 2
         else:
-            total += sym_to_value[roman[i]]
+            total += sym[s[i]]
             i += 1
-      
+            
+      return total
+
 if __name__ == "__main__":
     print("O número romano para o numeral inserido é:", end = " ")
     printRoman(number)
-    
+    priontInt(s)
